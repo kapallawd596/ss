@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #ffe4e1, #fff0f5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #ffffff;
+      padding: 30px 25px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(255, 182, 193, 0.4);
+      width: 340px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      margin-bottom: 10px;
+      color: #c71585;
+      font-size: 2rem;
+    }
+
+    h2 {
+      margin: 0;
+      margin-bottom: 25px;
+      color: #ff69b4;
+      font-weight: normal;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #f8c5d6;
+      border-radius: 10px;
+      background-color: #fffafc;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #ff69b4;
+      box-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #ff69b4;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #ff1493;
+    }
+
+    #message {
+      margin-top: 12px;
+      color: #d60050;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Silahkan masuk</h1>
+    
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="login()">Masuk</button>
+    <p id="message"></p>
+  </div>
+
+  <script>
+    function login() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      if (username === "admin" && password === "1234") {
+        window.location.href = "dashboard.html";
+      } else {
+        document.getElementById("message").innerText = "Username atau password salah!";
+      }
+    }
+  </script>
+
+</body>
+</html>
